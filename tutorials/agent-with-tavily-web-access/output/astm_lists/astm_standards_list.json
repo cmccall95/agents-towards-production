@@ -66295,12 +66295,12 @@
       "series": "G",
       "has_metric": false
     },
-    {
-      "designation": "ASTM G0157-98R18",
-      "code": "G0157-98R18",
-      "series": "G",
-      "has_metric": false
-    },
+      {
+        "designation": "ASTM G0157-98R18",
+        "code": "G0157-98R18",
+        "series": "G",
+        "has_metric": false
+      },
     {
       "designation": "ASTM G0158-98R21",
       "code": "G0158-98R21",

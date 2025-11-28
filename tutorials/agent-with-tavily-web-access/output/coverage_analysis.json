@@ -1,0 +1,1969 @@
+{
+  "timestamp": "2025-11-28T06:46:43.998578",
+  "target_site": "store.astm.org",
+  "total_searches": 43,
+  "official_list_count": 11109,
+  "discovered_count": 324,
+  "coverage_percentage": 2.92,
+  "gap": 10785,
+  "series_breakdown": {
+    "A": 92,
+    "B": 52,
+    "C": 25,
+    "D": 45,
+    "E": 30,
+    "F": 54,
+    "G": 4,
+    "J": 4,
+    "M": 1,
+    "P": 3,
+    "S": 4,
+    "Unknown": 10
+  },
+  "discovered_urls": [
+    {
+      "url": "https://store.astm.org/a0020_a0020m-20.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for General Requirements for Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/a0554-21.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A554 Standard Specification for Welded Stainless Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/a0182_a0182m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A182/A182M Standard Specification for Forged or Rolled ..."
+    },
+    {
+      "url": "https://store.astm.org/a0269_a0269m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A269/A269M Standard Specification for Seamless and ..."
+    },
+    {
+      "url": "https://store.astm.org/a0351_a0351m-24e01.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A351/A351M Standard Specification for Castings, ..."
+    },
+    {
+      "url": "https://store.astm.org/a0450_a0450m-25a.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A450/A450M Standard Specification for General ..."
+    },
+    {
+      "url": "https://store.astm.org/a0109_a0109m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Steel, Strip, Carbon (0.25 ..."
+    },
+    {
+      "url": "https://store.astm.org/a0962_a0962m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A962/A962M Standard Specification for Common ..."
+    },
+    {
+      "url": "https://store.astm.org/a0530_a0530m-18.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A530/A530M Standard Specification for General ..."
+    },
+    {
+      "url": "https://store.astm.org/a0320_a0320m-24a.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A320/A320M Standard Specification for Alloy-Steel and ..."
+    },
+    {
+      "url": "https://store.astm.org/a0276_a0276m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Stainless Steel Bars and Shapes"
+    },
+    {
+      "url": "https://store.astm.org/b0241_b0241m-22.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B241/B241M Standard Specification for Aluminum and ..."
+    },
+    {
+      "url": "https://store.astm.org/b0280-23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B280 Standard Specification for Seamless Copper Tube ..."
+    },
+    {
+      "url": "https://store.astm.org/b0286-20.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B286 Standard Specification for Copper Conductors ..."
+    },
+    {
+      "url": "https://store.astm.org/b0562-95r21.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B562 Standard Specification for Refined Gold"
+    },
+    {
+      "url": "https://store.astm.org/astm-tpt-1138.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "ASTM D6615 Standard Specification for Jet B Wide Cut ..."
+    },
+    {
+      "url": "https://store.astm.org/b0679-98r21.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B679 Standard Specification for Electrodeposited Coatings ..."
+    },
+    {
+      "url": "https://store.astm.org/b0449-93r22.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B449 Standard Specification for Chromates on Aluminum"
+    },
+    {
+      "url": "https://store.astm.org/b0008-23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B8 Standard Specification for Concentric-Lay-Stranded ..."
+    },
+    {
+      "url": "https://store.astm.org/b0607-21.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B607 Standard Specification for Autocatalytic Nickel Boron ..."
+    },
+    {
+      "url": "https://store.astm.org/b0211m-01.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Aluminum and Aluminum-Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/b0373-19.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B373 Standard Specification for Aluminum Foil for Capacitors"
+    },
+    {
+      "url": "https://store.astm.org/b29.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B29 Standard Specification for Refined Lead"
+    },
+    {
+      "url": "https://store.astm.org/b0745_b0745m-15r21.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Corrugated Aluminum Pipe for ..."
+    },
+    {
+      "url": "https://store.astm.org/b0107_b0107m-13r21.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Magnesium-Alloy Extruded Bars, ..."
+    },
+    {
+      "url": "https://store.astm.org/b0026_b0026m-18e01.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Aluminum-Alloy Sand Castings"
+    },
+    {
+      "url": "https://store.astm.org/b0869-07r23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Copper-Clad Steel Electrical ..."
+    },
+    {
+      "url": "https://store.astm.org/b0306-20.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Copper Drainage Tube (DWV)"
+    },
+    {
+      "url": "https://store.astm.org/c0754-20.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Specification for Installation of Steel Framing ..."
+    },
+    {
+      "url": "https://store.astm.org/c1948_c1948m-24.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C1948/C1948M Standard Specification for Alkali-Activated ..."
+    },
+    {
+      "url": "https://store.astm.org/c0033_c0033m-24a.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C33/C33M Standard Specification for Concrete Aggregates"
+    },
+    {
+      "url": "https://store.astm.org/c1912_c1912m-25.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C1912/C1912M Standard Specification for Supplementary ..."
+    },
+    {
+      "url": "https://store.astm.org/c0593-19.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C593 Standard Specification for Fly Ash and Other ..."
+    },
+    {
+      "url": "https://store.astm.org/c1036-25.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C1036 Standard Specification for Flat Glass"
+    },
+    {
+      "url": "https://store.astm.org/c1029-25.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C1029 Standard Specification for Spray-Applied Rigid ..."
+    },
+    {
+      "url": "https://store.astm.org/c0091_c0091m-25.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C91/C91M Standard Specification for Masonry Cement"
+    },
+    {
+      "url": "https://store.astm.org/c0330_c0330m-23.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Specification for Lightweight Aggregates ..."
+    },
+    {
+      "url": "https://store.astm.org/c0685_c0685m-25.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Specification for Concrete Made by Volumetric ..."
+    },
+    {
+      "url": "https://store.astm.org/c0208-22.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Specification for Cellulosic Fiber Insulating Board"
+    },
+    {
+      "url": "https://store.astm.org/d5055-24.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D5055 Standard Specification for Establishing and ..."
+    },
+    {
+      "url": "https://store.astm.org/d1248-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D1248 Standard Specification for Polyethylene Plastics ..."
+    },
+    {
+      "url": "https://store.astm.org/d3350-24.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D3350 Standard Specification for Polyethylene Plastics ..."
+    },
+    {
+      "url": "https://store.astm.org/d2513-24e01.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Polyethylene (PE) Gas Pressure ..."
+    },
+    {
+      "url": "https://store.astm.org/d0692_d0692m-20.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Coarse Aggregate for Asphalt ..."
+    },
+    {
+      "url": "https://store.astm.org/d4894-19r24.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Polytetrafluoroethylene (PTFE) ..."
+    },
+    {
+      "url": "https://store.astm.org/d2241-25a.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Poly(Vinyl Chloride) (PVC) ..."
+    },
+    {
+      "url": "https://store.astm.org/d1187_d1187m-97r24.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Asphalt-Base Emulsions for Use ..."
+    },
+    {
+      "url": "https://store.astm.org/d2239-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Polyethylene (PE) Plastic Pipe ..."
+    },
+    {
+      "url": "https://store.astm.org/e0329-25a.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E329 Standard Specification for Agencies Engaged in ..."
+    },
+    {
+      "url": "https://store.astm.org/e0029-22.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Practice for Using Significant Digits in Test Data ..."
+    },
+    {
+      "url": "https://store.astm.org/e0671-98r22.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E671 Standard Specification for Maximum Permissible ..."
+    },
+    {
+      "url": "https://store.astm.org/e0501-08r20.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E501 Standard Specification for Standard Rib Tire ..."
+    },
+    {
+      "url": "https://store.astm.org/e0608_e0608m-00r04.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Mineral-Insulated, Metal ..."
+    },
+    {
+      "url": "https://store.astm.org/e1403-97r25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Laboratory Glass Boiling Flasks"
+    },
+    {
+      "url": "https://store.astm.org/e0438-92r24.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Glasses in Laboratory Apparatus"
+    },
+    {
+      "url": "https://store.astm.org/e0694-18r24.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Laboratory Glass Volumetric ..."
+    },
+    {
+      "url": "https://store.astm.org/e0145-19r24.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Gravity-Convection and Forced- ..."
+    },
+    {
+      "url": "https://store.astm.org/f0667_f0667m-16r21.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F667/F667M Standard Specification for 3 through 24 in. ..."
+    },
+    {
+      "url": "https://store.astm.org/f0477-14r21.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F477 Standard Specification for Elastomeric Seals ..."
+    },
+    {
+      "url": "https://store.astm.org/f0594-24.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F594 Standard Specification for Stainless Steel Nuts"
+    },
+    {
+      "url": "https://store.astm.org/f2193-20.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F2193 Standard Specifications and Test Methods for ..."
+    },
+    {
+      "url": "https://store.astm.org/f1487-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F1487 Standard Consumer Safety Performance ..."
+    },
+    {
+      "url": "https://store.astm.org/f1148-24.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F1148 Standard Consumer Safety Performance ..."
+    },
+    {
+      "url": "https://store.astm.org/f0044-21.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Metallized Surfaces on Ceramic ..."
+    },
+    {
+      "url": "https://store.astm.org/f3125_f3125m-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for High Strength Structural Bolts ..."
+    },
+    {
+      "url": "https://store.astm.org/f0891-24.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Coextruded Poly(Vinyl Chloride) ..."
+    },
+    {
+      "url": "https://store.astm.org/f1336-20r25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Poly(Vinyl Chloride) (PVC) ..."
+    },
+    {
+      "url": "https://store.astm.org/f3442-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F3442 Standard Specification for Detect and Avoid System ..."
+    },
+    {
+      "url": "https://store.astm.org/f0877-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Crosslinked Polyethylene (PEX) ..."
+    },
+    {
+      "url": "https://store.astm.org/f0406-24.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F406 Standard Consumer Safety Specification for Non-Full ..."
+    },
+    {
+      "url": "https://store.astm.org/f1700-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Solid Vinyl Floor in Modular ..."
+    },
+    {
+      "url": "https://store.astm.org/f0825-22.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Drawers, Furniture, Marine, Steel"
+    },
+    {
+      "url": "https://store.astm.org/d6163-00e02.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D6163 Standard Specification for Styrene Butadiene ..."
+    },
+    {
+      "url": "https://store.astm.org/b0438-25.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Bronze-Base Powder Metallurgy ..."
+    },
+    {
+      "url": "https://store.astm.org/a0871_a0871m-03r07.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for High-Strength Low-Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/a0290_a0290m-16r21.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Carbon and Alloy Steel Forgings ..."
+    },
+    {
+      "url": "https://store.astm.org/e1974-19r25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Shelter, Electrical Equipment S-250/G"
+    },
+    {
+      "url": "https://store.astm.org/a0372_a0372m-20r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Carbon and Alloy Steel Forgings ..."
+    },
+    {
+      "url": "https://store.astm.org/a0427_a0427m-10.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Wrought Alloy Steel Rolls ..."
+    },
+    {
+      "url": "https://store.astm.org/b0823-20r24.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B823 Standard Specification for Materials for Copper Base ..."
+    },
+    {
+      "url": "https://store.astm.org/g0028-24.html",
+      "type": "ASTM",
+      "series": "G",
+      "title": "G28 Standard Test Methods for Detecting Susceptibility to ..."
+    },
+    {
+      "url": "https://store.astm.org/e1975-06.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Shelter, Electrical, Equipment S ..."
+    },
+    {
+      "url": "https://store.astm.org/b0939-21r25.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B939 Standard Test Method for Radial Crushing Strength ..."
+    },
+    {
+      "url": "https://store.astm.org/e1640-13r18.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E1640 Standard Test Method for Assignment of the Glass ..."
+    },
+    {
+      "url": "https://store.astm.org/a0182_a0182m-25a.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Forged or Rolled Alloy and ..."
+    },
+    {
+      "url": "https://store.astm.org/a0291_a0291m-19r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Steel Forgings, Carbon and Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/a0213_a0213m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Seamless Ferritic and Austenitic ..."
+    },
+    {
+      "url": "https://store.astm.org/a0914_a0914m-92r05.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Steel Bars Subject to Restricted ..."
+    },
+    {
+      "url": "https://store.astm.org/b0701_b0701m-13.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Concentric-Lay-Stranded Self ..."
+    },
+    {
+      "url": "https://store.astm.org/a0517_a0517m-06.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Pressure Vessel Plates, Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/f0593-02r08.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Stainless Steel Bolts, Hex Cap ..."
+    },
+    {
+      "url": "https://store.astm.org/b0348_b0348m-25.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Titanium and Titanium Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/f0593-24.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F593 Standard Specification for Stainless Steel Bolts, Hex ..."
+    },
+    {
+      "url": "https://store.astm.org/b0643-25.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B643 Standard Specification for Copper-Beryllium Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/a0802-19.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A802 Standard Practice for Steel Castings, Surface ..."
+    },
+    {
+      "url": "https://store.astm.org/b0861-24.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B861 Standard Specification for Titanium and ..."
+    },
+    {
+      "url": "https://store.astm.org/b0211_b0211m-23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B211/B211M Standard Specification for Aluminum and ..."
+    },
+    {
+      "url": "https://store.astm.org/d7826-17a.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Guide for Evaluation of New Aviation Gasolines ..."
+    },
+    {
+      "url": "https://store.astm.org/a0312_a0312m-04b.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Seamless, Welded, and Heavily ..."
+    },
+    {
+      "url": "https://store.astm.org/a0813_a0813m-14.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "or Double-Welded Austenitic Stainless Steel Pipe"
+    },
+    {
+      "url": "https://store.astm.org/a0312_a0312m-14b.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Seamless, Welded, and Heavily ..."
+    },
+    {
+      "url": "https://store.astm.org/a0632-19r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A632 Standard Specification for Seamless and Welded ..."
+    },
+    {
+      "url": "https://store.astm.org/a0407-23.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A407 Standard Specification for Steel Wire, Cold-Drawn, ..."
+    },
+    {
+      "url": "https://store.astm.org/e0867-04.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E867 Terminology Relating to Vehicle-Pavement Systems"
+    },
+    {
+      "url": "https://store.astm.org/b0174-17r24.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B174 Standard Specification for Bunch-Stranded Copper ..."
+    },
+    {
+      "url": "https://store.astm.org/b0229-12r23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B229 Standard Specification for Concentric-Lay-Stranded ..."
+    },
+    {
+      "url": "https://store.astm.org/e2472-12e01.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Test Method for Determination of Resistance to ..."
+    },
+    {
+      "url": "https://store.astm.org/d3343-05r15.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Test Method for Estimation of Hydrogen Content ..."
+    },
+    {
+      "url": "https://store.astm.org/d4054-25a.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Practice for Evaluation of New Aviation Turbine ..."
+    },
+    {
+      "url": "https://store.astm.org/b0172-17r24.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Rope-Lay-Stranded Copper ..."
+    },
+    {
+      "url": "https://store.astm.org/d5685-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for \u201cFiberglass\u201d (Glass-Fiber-Reinforced ..."
+    },
+    {
+      "url": "https://store.astm.org/c0578-14a.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C578 Standard Specification for Rigid, Cellular Polystyrene ..."
+    },
+    {
+      "url": "https://store.astm.org/d2700-13.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Test Method for Motor Octane Number of Spark ..."
+    },
+    {
+      "url": "https://store.astm.org/d2699-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D2699 Standard Test Method for Research Octane ..."
+    },
+    {
+      "url": "https://store.astm.org/a1003_a1003m-13a.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Steel Sheet, Carbon, Metallic"
+    },
+    {
+      "url": "https://store.astm.org/d7251-10.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D7251 Standard Specification for Color and Appearance ..."
+    },
+    {
+      "url": "https://store.astm.org/a0888-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Hubless Cast Iron Soil Pipe and ..."
+    },
+    {
+      "url": "https://store.astm.org/d6121-08b.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D6121 Standard Test Method for Evaluation of Load- ..."
+    },
+    {
+      "url": "https://store.astm.org/d5119-00.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Test Method for Evaluation of Automotive Engine ..."
+    },
+    {
+      "url": "https://store.astm.org/f0473-96.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F473 Standard Specification for Binding Mounting Area ..."
+    },
+    {
+      "url": "https://store.astm.org/a0519_a0519m-24a.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A519/A519M Standard Specification for Seamless Carbon ..."
+    },
+    {
+      "url": "https://store.astm.org/a0484_a0484m-24b.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for General Requirements ..."
+    },
+    {
+      "url": "https://store.astm.org/a0423_a0423m-09r14.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Seamless and Electric-Welded ..."
+    },
+    {
+      "url": "https://store.astm.org/a0962_a0962m-00.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Common Requirements for Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/a0312_a0312m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Seamless, Welded, and Heavily ..."
+    },
+    {
+      "url": "https://store.astm.org/c1329_c1329m-25.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C1329/C1329M Standard Specification for Mortar Cement"
+    },
+    {
+      "url": "https://store.astm.org/a0403_a0403m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Wrought Austenitic Stainless ..."
+    },
+    {
+      "url": "https://store.astm.org/a0192_a0192m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Seamless Carbon Steel Boiler ..."
+    },
+    {
+      "url": "https://store.astm.org/f1313.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F1313 Standard Specification for Volatile N-Nitrosamine Levels ..."
+    },
+    {
+      "url": "https://store.astm.org/b0649-06r16.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Ni-Fe-Cr-Mo-Cu-N Low-Carbon ..."
+    },
+    {
+      "url": "https://store.astm.org/d5933-96r13.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D5933 Standard Specification for 2 5/8-in. and 4- ..."
+    },
+    {
+      "url": "https://store.astm.org/d4360-03.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D4360 Standard Specification for Methyl n-Amyl Ketone"
+    },
+    {
+      "url": "https://store.astm.org/d5900-15b.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D5900 Standard Specification for Physical and Chemical ..."
+    },
+    {
+      "url": "https://store.astm.org/stp45750s.html",
+      "type": "ASTM",
+      "series": "S",
+      "title": "C10 - 06 Standard Specification for Natural Cement"
+    },
+    {
+      "url": "https://store.astm.org/e0646-16r24.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E646 Standard Test Method for Tensile Strain-Hardening ..."
+    },
+    {
+      "url": "https://store.astm.org/e3315-25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Certification of Metallic Materials"
+    },
+    {
+      "url": "https://store.astm.org/d5471-97r03.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D5471 Standard Specification for O-Xylene 980"
+    },
+    {
+      "url": "https://store.astm.org/f2342_f2342m-15.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F2342/F2342M Standard Specification for Design and ..."
+    },
+    {
+      "url": "https://store.astm.org/e0123-02r24.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Apparatus for Determination of ..."
+    },
+    {
+      "url": "https://store.astm.org/a0234_a0234m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Piping Fittings of Wrought ..."
+    },
+    {
+      "url": "https://store.astm.org/e3051-25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E3051 Standard Guide for Specification, Design ..."
+    },
+    {
+      "url": "https://store.astm.org/b0853-98.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B853 Standard Specification for Powder Metallurgy (P/M) Boron ..."
+    },
+    {
+      "url": "https://store.astm.org/b0715-96.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Sintered Copper Structural Parts ..."
+    },
+    {
+      "url": "https://store.astm.org/b0848-00.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B848 Standard Specification for Powder Forged (P/F) Ferrous ..."
+    },
+    {
+      "url": "https://store.astm.org/ptppta2026.html",
+      "type": "ASTM",
+      "series": "P",
+      "title": "Purified Terephthalic Acid"
+    },
+    {
+      "url": "https://store.astm.org/d5211-01.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Xylenes for p-Xylene Feedstock"
+    },
+    {
+      "url": "https://store.astm.org/d5211-12.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D5211 Standard Specification for Xylenes for p-Xylene Feedstock"
+    },
+    {
+      "url": "https://store.astm.org/a0074-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Cast Iron Soil Pipe and Fittings"
+    },
+    {
+      "url": "https://store.astm.org/a0488_a0488m-09.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A488/A488M Standard Practice for Steel Castings, Welding ..."
+    },
+    {
+      "url": "https://store.astm.org/a0400-23.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A400 Standard Practice for Steel Bars, Selection Guide ..."
+    },
+    {
+      "url": "https://store.astm.org/d0748-18r25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Natural Block Mica and Mica Films ..."
+    },
+    {
+      "url": "https://store.astm.org/d5116-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D5116 Standard Guide for Small-Scale Environmental ..."
+    },
+    {
+      "url": "https://store.astm.org/e0517-24.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Test Method for Plastic Strain Ratio r for Sheet ..."
+    },
+    {
+      "url": "https://store.astm.org/c0687-24.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Practice for Determination of Thermal Resistance ..."
+    },
+    {
+      "url": "https://store.astm.org/b0960-08.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Prime Western Grade-Recycled (PWG ..."
+    },
+    {
+      "url": "https://store.astm.org/a0996_a0996m-04.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Rail-Steel and Axle ..."
+    },
+    {
+      "url": "https://store.astm.org/f2511-05r13.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F2511 Standard Specification for Rollers, Bearing, Needle ..."
+    },
+    {
+      "url": "https://store.astm.org/e1159-15r25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E1159 Standard Specification for Thermocouple Materials, ..."
+    },
+    {
+      "url": "https://store.astm.org/f0855-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specifications for Temporary Protective Grounds ..."
+    },
+    {
+      "url": "https://store.astm.org/e3209_e3209m-20r25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Test Method for Pavement Thickness by ..."
+    },
+    {
+      "url": "https://store.astm.org/c0740_c0740m-13.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Guide for Evacuated Reflective Insulation In ..."
+    },
+    {
+      "url": "https://store.astm.org/c0522-03r22.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Test Method for Airflow Resistance of Acoustical ..."
+    },
+    {
+      "url": "https://store.astm.org/d8615-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D8615 Standard Test Method for Freezing Point of Aviation ..."
+    },
+    {
+      "url": "https://store.astm.org/a0263-12r19.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A263 Standard Specification for Stainless Chromium Steel- ..."
+    },
+    {
+      "url": "https://store.astm.org/a0705_a0705m-23.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Age-Hardening Stainless Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/astm-tpt-1229.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "D02 Member Special - Gasoline Specifications Course"
+    },
+    {
+      "url": "https://store.astm.org/f0712-24.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F712 Standard Test Methods and Specifications for ..."
+    },
+    {
+      "url": "https://store.astm.org/d7211-06.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D7211 Standard Specification for Parts Machined from ..."
+    },
+    {
+      "url": "https://store.astm.org/d6567-00r14.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Test Method for Measuring the Light Penetration ..."
+    },
+    {
+      "url": "https://store.astm.org/c1462-00r08.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Specification for Uranium Metal Enriched to More than ..."
+    },
+    {
+      "url": "https://store.astm.org/d6947_d6947m-16r23.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D6947/D6947M Standard Specification for Liquid Applied ..."
+    },
+    {
+      "url": "https://store.astm.org/c1934-25.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C1934 Standard Specification for Uranium Hexafluoride ..."
+    },
+    {
+      "url": "https://store.astm.org/c1348-96.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C1348 Standard Specification for Blended Uranium Oxides with ..."
+    },
+    {
+      "url": "https://store.astm.org/a0450_a0450m-96a.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A450/A450M Standard Specification for General ..."
+    },
+    {
+      "url": "https://store.astm.org/f0562-22.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F562 Standard Specification for Wrought 35Cobalt- ..."
+    },
+    {
+      "url": "https://store.astm.org/f3322-24a.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F3322 Standard Specification for Small Unmanned Aircraft ..."
+    },
+    {
+      "url": "https://store.astm.org/c0881_c0881m-20a.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C881/C881M Standard Specification for Epoxy-Resin-Base ..."
+    },
+    {
+      "url": "https://store.astm.org/a1077_a1077m-14.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Structural Steel with Improved ..."
+    },
+    {
+      "url": "https://store.astm.org/a0420_a0420m-24a.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A420/A420M Standard Specification for Piping Fittings of ..."
+    },
+    {
+      "url": "https://store.astm.org/f0823-22.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F823 Standard Specification for Desk, Log, Marine, Steel, ..."
+    },
+    {
+      "url": "https://store.astm.org/b0890-25.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B890 Standard Test Method for Determination of Metallic ..."
+    },
+    {
+      "url": "https://store.astm.org/e2465-24.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E2465 Standard Test Method for Analysis of Ni-Base Alloys ..."
+    },
+    {
+      "url": "https://store.astm.org/f1581-08r25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Composition of Anorganic Bone ..."
+    },
+    {
+      "url": "https://store.astm.org/e0539-19r25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E539 Standard Test Method for Analysis of Titanium Alloys ..."
+    },
+    {
+      "url": "https://store.astm.org/d6502-08.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D6502 Standard Test Method for Continuous Measurement ..."
+    },
+    {
+      "url": "https://store.astm.org/e1032-25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E1032 Standard Practice for Radiographic Examination of ..."
+    },
+    {
+      "url": "https://store.astm.org/d3906-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Test Method for Determination of Relative X-ray ..."
+    },
+    {
+      "url": "https://store.astm.org/c0183_c0183m-25.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Practice for Sampling and the Amount of Testing ..."
+    },
+    {
+      "url": "https://store.astm.org/a0792_a0792m-23.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A792/A792M Standard Specification for Steel Sheet, 55 % ..."
+    },
+    {
+      "url": "https://store.astm.org/d6628-03r10e01.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Color of Pavement Marking Materials"
+    },
+    {
+      "url": "https://store.astm.org/f1836m-97r07.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F1836M Standard Specification for Stuffing Tubes, Nylon, ..."
+    },
+    {
+      "url": "https://store.astm.org/d4029_d4029m-10.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Finished Woven Glass Fabrics"
+    },
+    {
+      "url": "https://store.astm.org/d1475.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Test Method for Density of Liquid Coatings, Inks, ..."
+    },
+    {
+      "url": "https://store.astm.org/d4438-24.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D4438 Standard Test Method for Particle Size Distribution ..."
+    },
+    {
+      "url": "https://store.astm.org/c0609-07r14.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C609 Standard Test Method for Measurement of Light ..."
+    },
+    {
+      "url": "https://store.astm.org/f0086-21.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F86 Standard Practice for Surface Preparation and Marking ..."
+    },
+    {
+      "url": "https://store.astm.org/a0116-11r16.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Metallic-Coated, Steel-Woven Wire ..."
+    },
+    {
+      "url": "https://store.astm.org/d0581-07.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Specification for Glass Fiber Greige Braided Tubular ..."
+    },
+    {
+      "url": "https://store.astm.org/f0962-04r23.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F962 Standard Specification for Oil Spill Response Boom ..."
+    },
+    {
+      "url": "https://store.astm.org/b0845-97r24.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B845 Standard Guide for Mixed Flowing Gas (MFG) Tests ..."
+    },
+    {
+      "url": "https://store.astm.org/b0098_b0098m-13r19.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Copper-Silicon Alloy Rod, Bar and Shapes"
+    },
+    {
+      "url": "https://store.astm.org/a0182_a0182m-08.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A182/A182M Standard Specification for Forged or Rolled Alloy and..."
+    },
+    {
+      "url": "https://store.astm.org/a0182_a0182m-18.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A182/A182M Standard Specification for Forged or Rolled Alloy and..."
+    },
+    {
+      "url": "https://store.astm.org/a0234_a0234m-19.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A234/A234M Standard Specification for Piping Fittings of Wrought..."
+    },
+    {
+      "url": "https://store.astm.org/a0312_a0312m-01.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A312/A312M Standard Specification for Seamless and Welded..."
+    },
+    {
+      "url": "https://store.astm.org/b0952_b0952m-12.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Zinc Alloys in Ingot Form for Spin Casting"
+    },
+    {
+      "url": "https://store.astm.org/a0182_a0182m-22.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A182/A182M Standard Specification for Forged or Rolled Alloy and..."
+    },
+    {
+      "url": "https://store.astm.org/b0366_b0366m-20.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B366/B366M Standard Specification for Factory-Made Wrought..."
+    },
+    {
+      "url": "https://store.astm.org/a0989_a0989m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Hot Isostatically-Pressed Alloy Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/b0828-23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Practice for Making Capillary Joints by Soldering ..."
+    },
+    {
+      "url": "https://store.astm.org/a0984_a0984m-00.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Steel Line Pipe, Black, Plain- ..."
+    },
+    {
+      "url": "https://store.astm.org/a0858_a0858m-09.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Heat-Treated Carbon Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/a0988_a0988m-05.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Hot Isostatically-Pressed ..."
+    },
+    {
+      "url": "https://store.astm.org/a0523_a0523m-21.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A523/A523M Standard Specification for Plain End ..."
+    },
+    {
+      "url": "https://store.astm.org/b0366_b0366m-25.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Factory-Made Wrought Nickel ..."
+    },
+    {
+      "url": "https://store.astm.org/a0758_a0758m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Wrought-Carbon Steel Butt-Welding ..."
+    },
+    {
+      "url": "https://store.astm.org/a0489-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A489 Standard Specification for Carbon Steel Eyebolts"
+    },
+    {
+      "url": "https://store.astm.org/f2062-00.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Square Drive Interconnections ..."
+    },
+    {
+      "url": "https://store.astm.org/a0135_a0135m-21.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Electric-Resistance-Welded Steel Pipe"
+    },
+    {
+      "url": "https://store.astm.org/f1545-15ar21.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F1545 Standard Specification for Plastic-Lined Ferrous Metal Pipe..."
+    },
+    {
+      "url": "https://store.astm.org/f0714-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Polyethylene (PE) Plastic Pipe ..."
+    },
+    {
+      "url": "https://store.astm.org/a0842-11ar22e01.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Compacted Graphite Iron Castings"
+    },
+    {
+      "url": "https://store.astm.org/f2115-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F2115 Standard Specification for Treadmills"
+    },
+    {
+      "url": "https://store.astm.org/c1746_c1746m-12.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C1746/C1746M Standard Test Method for Measurement of ..."
+    },
+    {
+      "url": "https://store.astm.org/d8625-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D8625 Standard Test Method for Chemical Assessment of ..."
+    },
+    {
+      "url": "https://store.astm.org/e2610-25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Test Method for Sensory Analysis\u2014Duo-Trio Test"
+    },
+    {
+      "url": "https://store.astm.org/d2950_d2950m-22.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "Standard Test Method for Density of Asphalt Mixtures in ..."
+    },
+    {
+      "url": "https://store.astm.org/a0036_a0036m-03a.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A36/A36M Standard Specification for Carbon Structural Steel"
+    },
+    {
+      "url": "https://store.astm.org/a0194_a0194m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A194/A194M Standard Specification for Carbon Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/a0311_a0311m-04r20.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Cold-Drawn, Stress-Relieved ..."
+    },
+    {
+      "url": "https://store.astm.org/a0696-17r22.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A696 Standard Specification for Steel Bars, Carbon, Hot ..."
+    },
+    {
+      "url": "https://store.astm.org/a0765_a0765m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Carbon Steel and Low-Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/a0285_a0285m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Pressure Vessel Plates, Carbon ..."
+    },
+    {
+      "url": "https://store.astm.org/rr-e03-1003.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "E0350-Standard Test Methods for Chemical Analysis ..."
+    },
+    {
+      "url": "https://store.astm.org/a0675_a0675m-14r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Steel Bars, Carbon, Hot-Wrought ..."
+    },
+    {
+      "url": "https://store.astm.org/a1112_a1112m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Cold-Formed Welded High Strength ..."
+    },
+    {
+      "url": "https://store.astm.org/a0266_a0266m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Carbon Steel Forgings ..."
+    },
+    {
+      "url": "https://store.astm.org/a0641_a0641m-19r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Zinc\u2013Coated (Galvanized) ..."
+    },
+    {
+      "url": "https://store.astm.org/a0299_a0299m-17r22.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Pressure Vessel Plates, Carbon ..."
+    },
+    {
+      "url": "https://store.astm.org/a0230_a0230m-19r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Steel Wire, Carbon Valve Spring ..."
+    },
+    {
+      "url": "https://store.astm.org/a0959-19.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A959 Standard Guide for Specifying Harmonized ..."
+    },
+    {
+      "url": "https://store.astm.org/a0217_a0217m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Steel Castings, Martensitic ..."
+    },
+    {
+      "url": "https://store.astm.org/a0941-25b.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A941 Standard Terminology Relating to Steel, Stainless ..."
+    },
+    {
+      "url": "https://store.astm.org/ptpss2026.html",
+      "type": "ASTM",
+      "series": "P",
+      "title": "Chemical Analysis Stainless Steel"
+    },
+    {
+      "url": "https://store.astm.org/a0493-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A493 Standard Specification for Stainless Steel Wire and ..."
+    },
+    {
+      "url": "https://store.astm.org/a0895-89r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A895 Standard Specification for Free-Machining Stainless ..."
+    },
+    {
+      "url": "https://store.astm.org/a0479_a0479m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Stainless Steel Bars and Shapes ..."
+    },
+    {
+      "url": "https://store.astm.org/a0511_a0511m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Seamless Stainless Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/f0879-23.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Stainless Steel Socket Button, ..."
+    },
+    {
+      "url": "https://store.astm.org/a0313_a0313m-18r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Stainless Steel Spring Wire"
+    },
+    {
+      "url": "https://store.astm.org/a0999_a0999m-23.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for General Requirements for Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/f2882_f2882m-17r25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Screws, Alloy Steel, Heat ..."
+    },
+    {
+      "url": "https://store.astm.org/b0166-24.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Nickel-Chromium-Aluminum ..."
+    },
+    {
+      "url": "https://store.astm.org/a0288-18r23.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Carbon and Alloy Steel Forgings ..."
+    },
+    {
+      "url": "https://store.astm.org/b0234m-10.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Aluminum and Aluminum-Alloy ..."
+    },
+    {
+      "url": "https://store.astm.org/a0691_a0691m-19r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Carbon and Alloy Steel Pipe, Electric ..."
+    },
+    {
+      "url": "https://store.astm.org/b0386_b0386m-25.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B386/B386M Standard Specification for Molybdenum and ..."
+    },
+    {
+      "url": "https://store.astm.org/a0786_a0786m-15r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Hot-Rolled Carbon, Low-Alloy, ..."
+    },
+    {
+      "url": "https://store.astm.org/b0928_b0928m-15r23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for High Magnesium Aluminum ..."
+    },
+    {
+      "url": "https://store.astm.org/b0550_b0550m-23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B550/B550M Standard Specification for Zirconium and ..."
+    },
+    {
+      "url": "https://store.astm.org/f2145-13.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F2145 Standard Specification for Polyamide 11 (PA 11) ..."
+    },
+    {
+      "url": "https://store.astm.org/c0450-18.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "C450 Standard Practice for Fabrication of Thermal ..."
+    },
+    {
+      "url": "https://store.astm.org/f0437-15.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Threaded Chlorinated Poly(Vinyl ..."
+    },
+    {
+      "url": "https://store.astm.org/f2881_f2881m-21.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for 12 to 60 in. [300 to 1500 mm] ..."
+    },
+    {
+      "url": "https://store.astm.org/f2881_f2881m-18.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for 12 to 60 in. [300 to 1500 mm] ..."
+    },
+    {
+      "url": "https://store.astm.org/f1412-01e01.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Polyolefin Pipe and Fittings ..."
+    },
+    {
+      "url": "https://store.astm.org/rr-f17-1017.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "D2683-Standard Specification for Socket-Type ..."
+    },
+    {
+      "url": "https://store.astm.org/d3034-24e01.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D3034 Standard Specification for Type PSM Poly(Vinyl ..."
+    },
+    {
+      "url": "https://store.astm.org/f0610_f0610m-21.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Practice for Evaluating the Quality of Molded Poly ..."
+    },
+    {
+      "url": "https://store.astm.org/f1803-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Poly(Vinyl Chloride) (PVC) ..."
+    },
+    {
+      "url": "https://store.astm.org/f0949-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F949 Standard Specification for Poly(Vinyl Chloride) (PVC) ..."
+    },
+    {
+      "url": "https://store.astm.org/f0949-06a.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F949 Standard Specification for Poly(Vinyl Chloride) (PVC) ..."
+    },
+    {
+      "url": "https://store.astm.org/f2905_f2905m-24.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Crosslinked Polyethylene (PEX) ..."
+    },
+    {
+      "url": "https://store.astm.org/f2280-11.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F2280 Standard Specification for \u201cTwist Off\u201d Type Tension ..."
+    },
+    {
+      "url": "https://store.astm.org/f1852-02.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F1852 Standard Specification for \"Twist Off\" Type Tension ..."
+    },
+    {
+      "url": "https://store.astm.org/a0354-17r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A354 Standard Specification for Quenched and Tempered ..."
+    },
+    {
+      "url": "https://store.astm.org/stp45260s.html",
+      "type": "ASTM",
+      "series": "S",
+      "title": "Fatigue Crack Growth Analyses of Aerospace Threaded ..."
+    },
+    {
+      "url": "https://store.astm.org/f0959_f0959m-17.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Compressible-Washer-Type Direct ..."
+    },
+    {
+      "url": "https://store.astm.org/f0959-07a.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Compressible-Washer-Type ..."
+    },
+    {
+      "url": "https://store.astm.org/astm-tpt-805.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "American Welding Society Learning | Economics of Welding"
+    },
+    {
+      "url": "https://store.astm.org/astm-tpt-643.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "American Welding Society Learning | Fabrication Math II"
+    },
+    {
+      "url": "https://store.astm.org/astm-tpt-676.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "American Welding Society Learning"
+    },
+    {
+      "url": "https://store.astm.org/astm-tpt-944.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "360 Immersive | Welding and Hot Works Part 2 (Construction)"
+    },
+    {
+      "url": "https://store.astm.org/e0749_e0749m-17r21.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E749/E749M Standard Practice for Acoustic Emission ..."
+    },
+    {
+      "url": "https://store.astm.org/stp29167s.html",
+      "type": "ASTM",
+      "series": "S",
+      "title": "Newly Developed Welding Material for Liquefied Natural ..."
+    },
+    {
+      "url": "https://store.astm.org/jte20230729.html",
+      "type": "ASTM",
+      "series": "J",
+      "title": "Effect of Ultrasonic Treatment on Residual Stress and ..."
+    },
+    {
+      "url": "https://store.astm.org/b0653_b0653m-11r16.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B653/B653M Standard Specification for Seamless and ..."
+    },
+    {
+      "url": "https://store.astm.org/a0790_a0790m-24.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Seamless and Welded Ferritic/ ..."
+    },
+    {
+      "url": "https://store.astm.org/jai103375.html",
+      "type": "ASTM",
+      "series": "J",
+      "title": "Comparison of the Laser and Electron Beam Welding ..."
+    },
+    {
+      "url": "https://store.astm.org/b723.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Specification for Nickel-Chromium-Molybdenum- ..."
+    },
+    {
+      "url": "https://store.astm.org/jai101018.html",
+      "type": "ASTM",
+      "series": "J",
+      "title": "Welding of Thermoplastic Roofing Membranes Subjected ..."
+    },
+    {
+      "url": "https://store.astm.org/a0774_a0774m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for As-Welded Wrought Austenitic ..."
+    },
+    {
+      "url": "https://store.astm.org/a0860_a0860m-25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Wrought High-Strength Ferritic Steel ..."
+    },
+    {
+      "url": "https://store.astm.org/d1005-95r24.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D1005 Standard Test Method for Measurement of Dry-Film ..."
+    },
+    {
+      "url": "https://store.astm.org/b0567-98r21.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B567 Standard Test Method for Measurement of Coating ..."
+    },
+    {
+      "url": "https://store.astm.org/b0487-24.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B487 Standard Test Method for Measurement of Metal and ..."
+    },
+    {
+      "url": "https://store.astm.org/b0504-90r23.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B504 Standard Test Method for Measurement of Thickness ..."
+    },
+    {
+      "url": "https://store.astm.org/d5861-07r25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D5861 Standard Guide for Significance of Particle Size ..."
+    },
+    {
+      "url": "https://store.astm.org/g0006-07r24.html",
+      "type": "ASTM",
+      "series": "G",
+      "title": "G6 Standard Test Method for Abrasion Resistance of ..."
+    },
+    {
+      "url": "https://store.astm.org/mono10092m.html",
+      "type": "ASTM",
+      "series": "M",
+      "title": "Chapter 8: Thin Solid Coatings"
+    },
+    {
+      "url": "https://store.astm.org/b1025-24.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B1025 Standard Specification for Electrodeposited ..."
+    },
+    {
+      "url": "https://store.astm.org/d4217-25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D4217 Standard Test Method for Gel Time of ..."
+    },
+    {
+      "url": "https://store.astm.org/b0456-17r22.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "B456 Standard Specification for Electrodeposited Coatings ..."
+    },
+    {
+      "url": "https://store.astm.org/f2217-02r07.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F2217 Standard Practice for Coating/Adhesive Weight ..."
+    },
+    {
+      "url": "https://store.astm.org/b0809-25.html",
+      "type": "ASTM",
+      "series": "B",
+      "title": "Standard Test Method for Porosity in Metallic Coatings by ..."
+    },
+    {
+      "url": "https://store.astm.org/f1941_f1941m-16r25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Specification for Electrodeposited Coatings on ..."
+    },
+    {
+      "url": "https://store.astm.org/a0976-18.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "A976 Standard Classification of Insulating Coatings for ..."
+    },
+    {
+      "url": "https://store.astm.org/a0754_a0754m-11.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Test Method for Coating Weight (Mass) of Metallic ..."
+    },
+    {
+      "url": "https://store.astm.org/e1795-25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Specification for Non-Reinforced Liquid Coating ..."
+    },
+    {
+      "url": "https://store.astm.org/f2252_f2252m-25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "Standard Practice for Evaluating Ink or Coating Adhesion ..."
+    },
+    {
+      "url": "https://store.astm.org/c0461-23.html",
+      "type": "ASTM",
+      "series": "C",
+      "title": "Standard Test Methods for Mastics and Coatings Used ..."
+    },
+    {
+      "url": "https://store.astm.org/ptpms2026.html",
+      "type": "ASTM",
+      "series": "P",
+      "title": "Mechanical Testing of Metals"
+    },
+    {
+      "url": "https://store.astm.org/rr-e28-2002.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "E8 - Test Methods for Tension Testing of Metallic Materials"
+    },
+    {
+      "url": "https://store.astm.org/jte1503-eb.html",
+      "type": "ASTM",
+      "series": "J",
+      "title": "Journal of Testing and Evaluation"
+    },
+    {
+      "url": "https://store.astm.org/f2931-19ar25.html",
+      "type": "ASTM",
+      "series": "F",
+      "title": "F2931 Standard Guide for Analytical Testing of Substances ..."
+    },
+    {
+      "url": "https://store.astm.org/e0644-11r25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "E644 Standard Test Methods for Testing Industrial ..."
+    },
+    {
+      "url": "https://store.astm.org/a0770_a0770m-03r25.html",
+      "type": "ASTM",
+      "series": "A",
+      "title": "Standard Specification for Through-Thickness Tension Testing ..."
+    },
+    {
+      "url": "https://store.astm.org/g0002_g0002m-25.html",
+      "type": "ASTM",
+      "series": "G",
+      "title": "G2/G2M Standard Test Method for Corrosion ..."
+    },
+    {
+      "url": "https://store.astm.org/stp49801s.html",
+      "type": "ASTM",
+      "series": "S",
+      "title": "Composite Materials' Testing"
+    },
+    {
+      "url": "https://store.astm.org/rr-e24-1000.html",
+      "type": "Unknown",
+      "series": "Unknown",
+      "title": "E0604-Standard Test Method for Dynamic Tear ..."
+    },
+    {
+      "url": "https://store.astm.org/d3376-18r25.html",
+      "type": "ASTM",
+      "series": "D",
+      "title": "D3376 Standard Test Methods of Sampling and Testing Pulps to ..."
+    },
+    {
+      "url": "https://store.astm.org/e6.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Terminology Relating to Methods of Mechanical ..."
+    },
+    {
+      "url": "https://store.astm.org/e2624-17r25.html",
+      "type": "ASTM",
+      "series": "E",
+      "title": "Standard Practice for Torque Calibration of Testing Machines"
+    },
+    {
+      "url": "https://store.astm.org/gtj20240027.html",
+      "type": "ASTM",
+      "series": "G",
+      "title": "A Comprehensive Review of Field Vane Shear Testing in ..."
+    }
+  ]
+}

@@ -65,8 +65,8 @@
    "outputs": [],
    "source": [
     "# To export your API keys into a .env file, run the following cell (replace with your actual keys):\n",
-    "!echo \"TAVILY_API_KEY=<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>\" >> .env\n",
-    "!echo \"OPENAI_API_KEY=<ssk-proj-XO2bKX1hIb_1EbQsn2UQOEut9HwFTIsDFhiFpJYV0gVWgLfnLaVidOrW3Vs3S4izuWBPqMKHbaT3BlbkFJeEyenxzOkx-9fxGH2lXUbyJsDucw_8tCatK3X_ZPmo8-2yIPchWtxgqJ13vtZnxJXFfHNIydgA\">> .env"
+    "!echo \"TAVILY_API_KEY=<your-tavily-api-key>\" >> .env\n",
+    "!echo \"OPENAI_API_KEY=<your-openai-api-key>\" >> .env"
    ]
   },
   {
