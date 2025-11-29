@@ -73,3 +73,4 @@ Thumbs.db
 # ATP Views Tracker
 atp_views_tracker/
 /tutorials/agent-with-tavily-web-access/output/astm_lists/full_summary
+/tutorials/agent-with-tavily-web-access/astm-grades-extractor/output
