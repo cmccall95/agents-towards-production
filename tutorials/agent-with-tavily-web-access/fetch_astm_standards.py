@@ -40,7 +40,9 @@ MD_DIR.mkdir(parents=True, exist_ok=True)
 
 # Processing configuration
 BATCH_SIZE = 200
-RATE_LIMIT_DELAY = 0.5  # seconds between requests
+BASE_DELAY = 0.06  # Base delay between requests (supports ~1000 req/min)
+MAX_RETRIES = 5  # Maximum retry attempts for 429 errors
+INITIAL_BACKOFF = 1.0  # Initial backoff delay in seconds
 
 
 def code_to_url(code: str) -> str:
@@ -68,30 +70,62 @@ def parse_designation(code: str) -> str:
     return code.upper()
 
 
-def extract_content(url: str) -> dict:
-    """Extract content from a single ASTM standard page using Tavily."""
-    try:
-        response = tavily_client.extract(urls=[url])
-        
-        if response and "results" in response and len(response["results"]) > 0:
-            result = response["results"][0]
-            raw_content = result.get("raw_content", "")
-            title = result.get("title", "")
-            
-            if len(raw_content.strip()) < 100:
-                return {"success": False, "error": "Empty or insufficient content"}
-            
-            return {
-                "success": True,
-                "url": url,
-                "title": title,
-                "raw_content": raw_content,
-            }
-        else:
-            return {"success": False, "error": "No results from Tavily"}
-            
-    except Exception as e:
-        return {"success": False, "error": str(e)}
+def is_rate_limit_error(error: Exception) -> bool:
+    """Check if the error is a 429 rate limit error."""
+    error_str = str(error).lower()
+    return "429" in error_str or "rate limit" in error_str or "too many requests" in error_str
+
+
+def extract_content_with_retry(url: str) -> dict:
+    """
+    Extract content from a single ASTM standard page using Tavily.
+    Implements exponential backoff retry logic for 429 rate limit errors.
+    """
+    last_error = None
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = tavily_client.extract(urls=[url])
+
+            if response and "results" in response and len(response["results"]) > 0:
+                result = response["results"][0]
+                raw_content = result.get("raw_content", "")
+                title = result.get("title", "")
+
+                if len(raw_content.strip()) < 100:
+                    return {"success": False, "error": "Empty or insufficient content", "retries": attempt}
+
+                return {
+                    "success": True,
+                    "url": url,
+                    "title": title,
+                    "raw_content": raw_content,
+                    "retries": attempt
+                }
+            else:
+                return {"success": False, "error": "No results from Tavily", "retries": attempt}
+
+        except Exception as e:
+            last_error = e
+
+            # Check if it's a rate limit error
+            if is_rate_limit_error(e):
+                if attempt < MAX_RETRIES - 1:
+                    # Calculate exponential backoff delay
+                    backoff_delay = INITIAL_BACKOFF * (2 ** attempt)
+                    print(f"         ⏳ Rate limited (429). Retry {attempt + 1}/{MAX_RETRIES} in {backoff_delay:.1f}s...")
+                    time.sleep(backoff_delay)
+                    continue
+            else:
+                # Non-rate-limit error, don't retry
+                return {"success": False, "error": str(e), "retries": attempt}
+
+    # All retries exhausted
+    return {
+        "success": False,
+        "error": f"Rate limit exceeded after {MAX_RETRIES} retries: {str(last_error)}",
+        "retries": MAX_RETRIES
+    }
 
 
 def save_markdown(code: str, designation: str, title: str, content: str, url: str) -> Path:
@@ -116,6 +150,34 @@ def load_standards_list() -> list:
     return data.get("standards", [])
 
 
+def get_completed_batches() -> set:
+    """
+    Scan the output directory for completed batch files and return a set of batch numbers.
+    Batch files are named: batch_{batch_num:04d}_{timestamp}.json
+    """
+    completed = set()
+    if JSON_DIR.exists():
+        for file in JSON_DIR.glob("batch_*.json"):
+            # Extract batch number from filename like "batch_0011_20251128_123456.json"
+            match = re.match(r"batch_(\d{4})_", file.name)
+            if match:
+                batch_num = int(match.group(1))
+                completed.add(batch_num)
+    return completed
+
+
+def get_next_batch_to_process(total_batches: int) -> int:
+    """
+    Determine the next batch to process based on completed batches.
+    Returns the first batch number that hasn't been completed, or -1 if all done.
+    """
+    completed = get_completed_batches()
+    for batch_num in range(total_batches):
+        if batch_num not in completed:
+            return batch_num
+    return -1  # All batches completed
+
+
 def process_batch(standards: list, start_idx: int, end_idx: int, batch_num: int) -> tuple:
     """Process a batch of standards and return results and errors."""
     batch = standards[start_idx:end_idx]
@@ -136,9 +198,9 @@ def process_batch(standards: list, start_idx: int, end_idx: int, batch_num: int)
 
         print(f"[{i}/{total_in_batch}] (#{global_idx}) {code}")
 
-        # Extract content
-        extract_result = extract_content(url)
-        time.sleep(RATE_LIMIT_DELAY)  # Rate limiting
+        # Extract content with retry logic
+        extract_result = extract_content_with_retry(url)
+        time.sleep(BASE_DELAY)  # Base rate limiting between requests
 
         if extract_result["success"]:
             # Save markdown
@@ -214,6 +276,9 @@ def main():
     parser.add_argument("--start", type=int, help="Start index (inclusive)")
     parser.add_argument("--end", type=int, help="End index (exclusive)")
     parser.add_argument("--all", action="store_true", help="Process all standards in batches")
+    parser.add_argument("--resume", action="store_true", help="Resume from next incomplete batch")
+    parser.add_argument("--resume-through", type=int, metavar="N", help="Resume and process through batch N")
+    parser.add_argument("--status", action="store_true", help="Show progress status and exit")
     args = parser.parse_args()
 
     print("=" * 60)
@@ -229,6 +294,22 @@ def main():
     print(f"📦 Batch size: {BATCH_SIZE}")
     print(f"📦 Total batches: {total_batches}")
 
+    # Get completed batches for status display
+    completed_batches = get_completed_batches()
+    next_batch = get_next_batch_to_process(total_batches)
+
+    print(f"✅ Completed batches: {len(completed_batches)}/{total_batches}")
+    if completed_batches:
+        print(f"   Batches done: {sorted(completed_batches)}")
+    if next_batch >= 0:
+        print(f"➡️  Next batch to process: {next_batch} (standards {next_batch * BATCH_SIZE}-{min((next_batch + 1) * BATCH_SIZE, total_standards) - 1})")
+    else:
+        print("🎉 All batches completed!")
+
+    # Status mode - just show progress and exit
+    if args.status:
+        return
+
     # Determine what to process
     if args.batch is not None:
         # Single batch mode
@@ -242,16 +323,43 @@ def main():
         batch_num = start_idx // BATCH_SIZE
         batches_to_process = [(batch_num, start_idx, end_idx)]
     elif args.all:
-        # All batches mode
+        # All batches mode (skip already completed)
         batches_to_process = [
             (b, b * BATCH_SIZE, min((b + 1) * BATCH_SIZE, total_standards))
-            for b in range(total_batches)
+            for b in range(total_batches) if b not in completed_batches
         ]
+        if not batches_to_process:
+            print("\n✅ All batches already completed!")
+            return
+    elif args.resume:
+        # Resume mode - process just the next incomplete batch
+        if next_batch < 0:
+            print("\n✅ All batches already completed!")
+            return
+        start_idx = next_batch * BATCH_SIZE
+        end_idx = min(start_idx + BATCH_SIZE, total_standards)
+        batches_to_process = [(next_batch, start_idx, end_idx)]
+    elif args.resume_through is not None:
+        # Resume through batch N - process all incomplete batches up to N
+        if next_batch < 0:
+            print("\n✅ All batches already completed!")
+            return
+        end_batch = min(args.resume_through, total_batches - 1)
+        batches_to_process = [
+            (b, b * BATCH_SIZE, min((b + 1) * BATCH_SIZE, total_standards))
+            for b in range(next_batch, end_batch + 1) if b not in completed_batches
+        ]
+        if not batches_to_process:
+            print(f"\n✅ All batches through {end_batch} already completed!")
+            return
     else:
-        # Default: first batch only
-        print("\n⚠️  No arguments provided. Processing first batch only.")
-        print("    Use --all to process all standards, or --batch N for a specific batch.\n")
-        batches_to_process = [(0, 0, min(BATCH_SIZE, total_standards))]
+        # Default: show help and suggest resume
+        print("\n⚠️  No arguments provided.")
+        print("    Use --resume to continue from where you left off")
+        print("    Use --resume-through N to process through batch N")
+        print("    Use --batch N for a specific batch")
+        print("    Use --status to see progress\n")
+        return
 
     # Process batches
     all_results = []
