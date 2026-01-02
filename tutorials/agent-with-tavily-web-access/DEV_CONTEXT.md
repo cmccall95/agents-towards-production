@@ -1,13 +1,13 @@
-# ASTM/ASME Standards Scraper - Development Context
+# ASTM Standards Scraper - Development Context
 
-> **Last Updated**: 2025-11-28
-> **Status**: Phase 2 Complete - Ready for URL Generation from Official List
+> **Last Updated**: 2025-12-11
+> **Status**: ✅ Complete - 11,107/11,109 standards extracted (99.98%)
 
 ---
 
 ## Project Overview
 
-Scrapes ASTM and ASME standard pages from `https://store.astm.org/` using the Tavily API for RAG database ingestion.
+Scraped ASTM standard pages from `https://store.astm.org/` using the Tavily API for RAG database ingestion.
 
 **Goal**: Extract structured content from all available .html standard pages for:
 - RAG (Retrieval-Augmented Generation) operations
@@ -15,191 +15,197 @@ Scrapes ASTM and ASME standard pages from `https://store.astm.org/` using the Ta
 
 ---
 
-## What We've Completed
-
-### Phase 1: Diagnostics & Discovery Method
-
-The ASTM Store is a **Next.js/React application** - traditional crawling doesn't work.
-
-| Tavily Method | Result |
-|---------------|--------|
-| `map()` | ❌ Found 0 .html pages (only navigation) |
-| `crawl()` | ❌ Redirected to www.astm.org |
-| **`search()`** | ✅ Finds .html pages via indexed content |
-| `extract()` | ✅ Extracts content from known URLs |
-
-**Key Insight**: Pages exist and are indexed, but links are rendered via JavaScript.
-
-### Phase 2: Coverage Analysis
-
-**Problem Identified**: Search-based discovery only finds ~2.9% of standards.
+## Final Results Summary
 
 | Metric | Value |
 |--------|-------|
-| Official ASTM List | **11,109 standards** |
-| Discovered via Tavily search | **324 pages** |
-| Coverage | **2.9%** |
-| Gap | **10,785 standards** |
+| Total Standards in List | 11,109 |
+| Successfully Extracted | **11,107** |
+| Failed Extraction | 2 |
+| Success Rate | **99.98%** |
 
-**Root Cause**: Tavily `search()` returns max 20 results per query. Even with 43 different queries, most standards are not discoverable this way.
+### Failed Standards (Not Relevant to Piping)
 
-### Phase 3: Official Standards List Obtained
+These 2 standards failed with "No results from Tavily" - likely page structure issues:
 
-Scraped complete ASTM standards list from `https://la.astm.org/standards/astm-standards-list/`
+| Code | URL |
+|------|-----|
+| E2628-20 | https://store.astm.org/e2628-20.html |
+| F3238-17R23 | https://store.astm.org/f3238-17r23.html |
 
-**Saved to**: `output/astm_lists/astm_standards_list.json`
+---
+
+## Output Structure
+
+All output is located in:
+```
+tutorials/agent-with-tavily-web-access/output/astm_lists/full_summary/json/
+```
+
+### Markdown Files (RAG Content)
+
+```
+output/astm_lists/full_summary/json/md/
+├── a0001-00r18.md
+├── a0105_a0105m-23.md
+├── b0016_b0016m-22.md
+├── ... (11,107 files total)
+└── g0215-16.md
+```
+
+Each markdown file contains:
+- Standard designation and title
+- Full extracted content from the ASTM store page
+- Source URL reference
+
+### Batch Result Files
+
+```
+output/astm_lists/full_summary/json/
+├── batch_0000_20251128_075110.json   # Batch 0 results
+├── batch_0001_20251128_080321.json   # Batch 1 results
+├── ... (56 batch files)
+├── batch_0055_20251129_172314.json   # Batch 55 results
+├── all_errors_consolidated.json       # All errors from initial run
+├── retry_results_20251211_130737.json # Retry success results
+└── retry_errors_20251211_130737.json  # Final 2 failures
+```
+
+### Batch JSON Structure
 
 ```json
 {
-  "source_url": "https://la.astm.org/standards/astm-standards-list/",
-  "total_count": 11109,
-  "series_breakdown": {
-    "A": 208, "B": 590, "C": 1097, "D": 4768,
-    "E": 2120, "F": 2137, "G": 188, "SI": 1
-  },
-  "standards": [
-    {"designation": "ASTM A0001-00R18", "code": "A0001-00R18", "series": "A", "has_metric": false},
-    {"designation": "ASTM A0105_A0105M-23", "code": "A0105_A0105M-23", "series": "A", "has_metric": true},
-    {"designation": "ASTM G0170-06R20E01", "code": "G0170-06R20E01", "series": "G", "has_metric": false},
-    ...
-  ]
+  "batch_number": 0,
+  "range": "0-199",
+  "total_in_batch": 200,
+  "successful": 198,
+  "failed": 2,
+  "results": [
+    {
+      "code": "A0001-00R18",
+      "designation": "ASTM A0001-00R18",
+      "url": "https://store.astm.org/a0001-00r18.html",
+      "title": "Standard Specification for...",
+      "content_length": 4523,
+      "md_file": "output/.../md/a0001-00r18.md",
+      "success": true
+    }
+  ],
+  "generated_at": "2025-11-28T07:51:10.753832"
 }
 ```
 
 ---
 
-## URL Pattern Analysis
+## Processing Timeline
 
-### Standard Designation → URL Mapping
+| Phase | Date | Description |
+|-------|------|-------------|
+| Initial Run | Nov 28-29, 2025 | Processed all 56 batches (200 standards each) |
+| Error Analysis | Dec 11, 2025 | Consolidated 786 errors from 22 batches |
+| Retry Run | Dec 11, 2025 | Batch retry of 786 failed standards → 784 recovered |
 
-| Official Designation | URL Pattern | Example URL |
-|---------------------|-------------|-------------|
-| `ASTM A0105_A0105M-23` | Lowercase, keep underscores | `a0105_a0105m-23.html` |
-| `ASTM A0001-00R18` | Lowercase, no underscore | `a0001-00r18.html` |
-| `ASTM G0170-06R20E01` | Lowercase | `g0170-06r20e01.html` |
+### Error Breakdown (Initial Run)
 
-**URL Construction Rule**:
-```python
-code = "A0105_A0105M-23"
-url = f"https://store.astm.org/{code.lower()}.html"
-# Result: https://store.astm.org/a0105_a0105m-23.html
-```
+| Category | Count | Cause |
+|----------|-------|-------|
+| DNS/Network Error | 761 | Temporary internet connectivity issues |
+| No Results | 21 | Tavily couldn't extract content |
+| Timeout | 3 | Request took too long |
+| Other | 1 | Miscellaneous |
 
-### Variations to Handle
-
-1. **With metric suffix**: `A0105_A0105M-23` → has `_A0105M` part
-2. **Without metric**: `A0001-00R18` → no underscore
-3. **Reapproved**: `G0170-06R20E01` → has `R20` (reapproved 2020)
-4. **Edition suffix**: `A0351_A0351M-24E01` → has `E01` edition marker
+**Resolution**: 784 of 786 errors were recovered on retry. Only 2 standards remain unextracted.
 
 ---
 
-## Current Files Structure
+## Script: `fetch_astm_standards.py`
 
-```
-tutorials/agent-with-tavily-web-access/
-├── .env                      # API keys
-├── DEV_CONTEXT.md            # This file (LLM context)
-├── astm_scraper.py           # Original search-based scraper
-├── extract_experiment.py     # Content extraction testing (5 pages)
-├── save_astm_list.py         # Fetches official list from la.astm.org
-├── coverage_analysis.py      # Analyzes search coverage gap
-└── output/
-    ├── astm_lists/
-    │   ├── astm_standards_list.json   # ⭐ 11,109 standards
-    │   └── astm_standards_list.md     # Markdown table
-    ├── coverage_analysis.json         # Search coverage report
-    ├── a0105_a0105m-21.md             # Extracted markdown content
-    ├── a0182_a0182m-23.md
-    └── extraction_experiment_*.json   # Extraction results
-```
-
----
-
-## Content Extraction (Working)
-
-`extract_experiment.py` successfully extracts:
-
-| Field | Source | Status |
-|-------|--------|--------|
-| `designation` | Parsed from filename | ✅ `A105/A105M-21` |
-| `title` | Tavily `title` field | ✅ |
-| `abstract` | Regex from `raw_content` | ✅ |
-| `scope` | Regex from `raw_content` | ✅ |
-| `standard_type` | Parsed (`ASTM`/`ASME`) | ✅ |
-| `markdown_file` | Saved `.md` file path | ✅ |
-
-**Output per standard**:
-- JSON with structured metadata
-- Markdown file with full content (for RAG)
-
----
-
-## ⭐ NEXT STEP: Generate URLs from Official List
-
-### Task
-
-Create a script that:
-
-1. **Reads** `output/astm_lists/astm_standards_list.json` (11,109 standards)
-2. **Converts** each `code` to a `store.astm.org` URL
-3. **Validates** URLs exist (HEAD request or Tavily extract)
-4. **Outputs** verified URLs for extraction
-
-### URL Conversion Logic
-
-```python
-def code_to_url(code: str) -> str:
-    """
-    Convert ASTM code to store.astm.org URL.
-
-    Examples:
-    - "A0105_A0105M-23" → "https://store.astm.org/a0105_a0105m-23.html"
-    - "A0001-00R18" → "https://store.astm.org/a0001-00r18.html"
-    - "G0170-06R20E01" → "https://store.astm.org/g0170-06r20e01.html"
-    """
-    return f"https://store.astm.org/{code.lower()}.html"
-```
-
-### Validation Strategy
-
-Option A: **Tavily extract()** - Returns content if page exists
-Option B: **HTTP HEAD request** - Faster, just checks if URL returns 200
-
-### Expected Output
-
-```json
-{
-  "total_in_list": 11109,
-  "valid_urls": [...],
-  "invalid_urls": [...],
-  "validation_rate": "85%"
-}
-```
-
----
-
-## API Notes
-
-- **Tavily API Key**: Required in `.env` as `TAVILY_API_KEY`
-- **Rate Limiting**: Use 200-500ms delays between requests
-- **Extract Cost**: ~0.01 credits per URL (estimate)
-- **Batch Size**: Process in batches of 50-100 for progress tracking
-
----
-
-## Running Scripts
+### Command-Line Usage
 
 ```powershell
 cd tutorials\agent-with-tavily-web-access
-.venv\Scripts\activate
-python <script_name>.py
+.venv\Scripts\python.exe fetch_astm_standards.py [OPTIONS]
 ```
 
-| Script | Purpose |
-|--------|---------|
-| `save_astm_list.py` | Fetch official list |
-| `coverage_analysis.py` | Analyze search coverage |
-| `extract_experiment.py` | Test extraction (5 pages) |
-| `astm_scraper.py` | Original search-based scraper |
+### Options
+
+| Option | Description |
+|--------|-------------|
+| `--status` | Show progress status and exit |
+| `--batch N` | Process specific batch number (0-indexed) |
+| `--resume` | Process next incomplete batch |
+| `--resume-through N` | Resume and process through batch N |
+| `--all` | Process all remaining batches |
+| `--retry-failed` | Retry only previously failed standards |
+| `--start N --end M` | Process custom range of standards |
+
+### Rate Limiting Configuration
+
+| Setting | Value | Purpose |
+|---------|-------|---------|
+| `BATCH_SIZE` | 200 | Standards per processing batch |
+| `BATCH_EXTRACT_SIZE` | 20 | URLs per Tavily API call |
+| `BASE_DELAY` | 0.06s | Delay between API calls |
+| `MAX_RETRIES` | 5 | Retry attempts for 429 errors |
+| `INITIAL_BACKOFF` | 1.0s | Starting backoff delay |
+
+Exponential backoff sequence: 1s → 2s → 4s → 8s → 16s
+
+---
+
+## Files Structure
+
+```
+tutorials/agent-with-tavily-web-access/
+├── .env                          # API keys (TAVILY_API_KEY)
+├── DEV_CONTEXT.md                # This file
+├── README.md                     # User documentation
+├── fetch_astm_standards.py       # Main batch processing script
+├── astm_scraper.py               # Original search-based scraper
+├── extract_experiment.py         # Content extraction testing
+├── save_astm_list.py             # Fetches official list from la.astm.org
+├── coverage_analysis.py          # Analyzes search coverage gap
+└── output/
+    └── astm_lists/
+        ├── astm_standards_list.json    # Source: 11,109 standards
+        └── full_summary/json/
+            ├── batch_*.json            # 56 batch result files
+            ├── all_errors_consolidated.json
+            ├── retry_results_*.json
+            ├── retry_errors_*.json
+            └── md/                     # 11,107 markdown files
+```
+
+---
+
+## Technical Notes
+
+### URL Construction
+
+```python
+def code_to_url(code: str) -> str:
+    return f"https://store.astm.org/{code.lower()}.html"
+```
+
+Examples:
+- `A0105_A0105M-23` → `https://store.astm.org/a0105_a0105m-23.html`
+- `A0001-00R18` → `https://store.astm.org/a0001-00r18.html`
+
+### Why Tavily?
+
+The ASTM Store is a **Next.js/React SPA** - traditional crawling doesn't work because links are rendered via JavaScript. Tavily's `extract()` API can parse JavaScript-rendered content.
+
+### API Requirements
+
+- **Tavily API Key**: Required in `.env` as `TAVILY_API_KEY`
+- **Account Tier**: 1000 requests/minute (upgraded from 100)
+
+---
+
+## Potential Next Steps
+
+1. **Database Ingestion**: Load markdown files into a vector database (Pinecone, Weaviate, etc.) for RAG
+2. **Structured Parsing**: Extract specific fields (scope, abstract, referenced documents) from markdown content
+3. **ASME Standards**: Apply same approach to ASME standards if needed
+4. **Incremental Updates**: Periodically re-fetch to capture new/updated standards
 

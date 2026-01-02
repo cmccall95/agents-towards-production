@@ -1,0 +1,84 @@
+{
+  "test_run": "20251212_014842",
+  "target_urls": [
+    "https://www.pnumbers.com/",
+    "http://www.pnumbers.com/",
+    "https://pnumbers.com/",
+    "http://pnumbers.com/"
+  ],
+  "target_domain": "pnumbers.com",
+  "site_access": {
+    "test": "site_access",
+    "urls_tested": [
+      "https://www.pnumbers.com/",
+      "http://www.pnumbers.com/",
+      "https://pnumbers.com/",
+      "http://pnumbers.com/"
+    ],
+    "timestamp": "2025-12-12T01:48:42.053675",
+    "success": true,
+    "successful_url": "https://pnumbers.com/",
+    "error": null,
+    "content_length": 134530,
+    "title": "P Numbers",
+    "raw_content_preview": "P Numbers\n\n===============\n\n[![Image 1](https://pnumbers.com/images/cspec.png)](https://www.cspec.com/)\n\n[P Numbers](https://cspec.com/pnumbers.html)\n\nreset clear\n\nP#G#ISO Spec Type UNS ksi (MPa)Product Form in. (mm)\n1 1 11.1 A/SA-36......58 (400)Plate, Bar, Shape...\n1 1 1.1 A/SA-53 E, A K02504 48 (330)Resistance Welded Pipe...\n1 1 1.1 A/SA-53 S, A K02504 48 (330)Smls. Pipe...\n1 1 11.1 A/SA-53 E, B K03005 60 (415)Resistance Welded Pipe...\n1 1 11.1 A/SA-53 F K03005 48 (330)Furnace Welded Pipe...\n1 1 11.1 A/SA-53 S, B K03005 60 (415)Smls. Pipe...\n1 2 11.1 A/SA-105...K03504 70 (485)Flange, Fitting...\n1 1 1.1 A/SA-106 A K02501 48 (330)Smls. Pipe...\n1 1 11.1 A/SA-106 B K03006 60 (415)Smls. Pipe...\n1 2 11.1 A/SA-106 C K03501 70 (485)Smls. Pipe...\n1 1 1.1 A108 1015 G10150...Bar...\n1 1 1.1 A108 1018 G10180...Bar...\n1 1 1.1 A108 1020 G10200...Bar...\n3 3 4.1 A108 8620 G86200...Bar...\n1 1 1.1 A/SA-134 SA283 A K01400 45 (310)Welded Pipe...\n1 1 1.1 A/SA-134 SA285 A K01700 45 (310)Welded Pipe...\n1 1 1.1 A/SA-134 SA283 B K01702 50 (345)Welded Pipe...\n1 1 1.1 A/SA-134 SA285 B K02200 50 (345)Welded Pipe...\n1 1 1.1 A/SA-134 SA283 C K02401 55 (380)Welded Pipe...\n1 1 11.1 A/SA-134 SA283 D K02702 60 (415)Welded Pipe...\n1 1 11.1 A/SA-134 SA285 C K02801 55 (380)Welded Pipe...\n1 1 1.1 A/SA-135 A K02509 48 (330)E.R.W. Pipe...\n1 1 11.1 A/SA-135 B K03018 60 (415)E.R.W. Pipe...\n1 1 1.1 A139 A K02508 48 (330)Welded Pipe...\n1 1 11.1 A139 B K03003 60 (415)Welded Pipe...\n1 1 11.1 A139 C K03004 60 (415)Welded Pipe...\n1 1 11.1 A139 D K03010 60 (415)Welded Pipe...\n1 1 11.1 A139 E K03012 66 (455)Welded Pipe...\n8 1 8.1 A167 302B S30215 75 (515)Plate, Sheet, Strip...\n8 2 8.2 A167 308 S30800 75 (515)Plate, Sheet, Strip...\n8 2 8.2 A167 309 S30900 75 (515)Plate, Sheet, Strip...\n8 2 8.2 A167 310 S31000 75 (515)Plate, Sheet, Strip...\n1 1 1.1 A/SA-178 A K01200 47 (325)E.R.W. Tube...\n1 2 11.1 A/SA-178 D K02709 70 (485)E.R.W. Tube...\n1 1 11.1 A/SA-178 C K03503 60 (415)E.R.W. Tube...\n1 1 1.1 A/SA-179...K01200 47"
+  },
+  "direct_http_access": {
+    "test": "direct_http_access",
+    "timestamp": "2025-12-12T01:48:45.851067",
+    "success": true,
+    "available": true,
+    "error": null,
+    "status_code": 200,
+    "content_length": 2068,
+    "content_preview": "<!DOCTYPE html>\n<html>\n\n</html>\n\n\n\n<head>\n    <html xmlns=\"http://www.w3.org/1999/xhtml\">\n    <meta charset=\"UTF-8\">\n    <title>P Numbers</title>\n\n    <script src='js/jquery.min.js'></script>\n    <script src='js/jquery-ui.js'></script>\n    <script src='js/sortable.js'></script>\n    <script src='js/default.js'></script>\n    <script src='js/mob.js'></script>\n    <link rel='stylesheet' type='text/css' href='css/default.css'>\n    <link rel='stylesheet' type='text/css' href='css/mob.css'>\n</head>\n\n\n<div id='wrapper'>\n    <div id='header' class='grid-container'>\n        <div id=\"top_left\">\n            <a href=\"https://www.cspec.com/\" target=\"cspec\">\n                <img src=\"images/cspec.png\" alt=\"\">\n            </a>\n        </div>\n        <div id=\"top_center\">\n            <a href=\"https://cspec.com/pnumbers.html\" id='title' target=\"cspec\">P Numbers</a>\n        </div>\n        <div id=\"top_right\">\n            <button type='button' id='reset' class='reset' title='resets table'>reset</button>\n            <button type='button' id='clear' class='clear' title='Clears all selected highlighted rows'>clear</button>\n        </div>\n    </div>\n\n    <div id='content'>\n        <div id='main'></div>\n    </div>\n\n    <div id='footer'>\n        <p id='powered'> Powered by C-spec WeldOffice®</p>\n        <a href=\"https://cspec.com/welding-procedure-software/index.html\" target=\"cspec\">\n            <img src=\"images/wps.png\" alt=\"wps\">\n        </a>\n        <a href=\"https://cspec.com/welder-performance-qualification-software/index.html\" target=\"cspec\">\n            <img src=\"images/wpq.png\" alt=\"wpq\">\n        </a>\n        <a href=\"https://cspec.com/nde-software/index.html\" target=\"cspec\">\n            <img src=\"images/nde.png\" alt=\"\">\n        </a>\n        <a href=\"https://cspec.com/asme-IX-software/index.html\" target=\"cspec\">\n            <img src=\"images/tix.png\" alt=\"tix\">\n        </a>\n        <a href=\"https://cspec.com/asme-interpretations-software/index.html\" target=\"cspec\">\n            <img src",
+    "final_url": "https://www.pnumbers.com/"
+  },
+  "search_discovery": {
+    "test": "search_discovery",
+    "domain": "pnumbers.com",
+    "timestamp": "2025-12-12T01:48:46.627655",
+    "success": true,
+    "error": null,
+    "pages_found": 1,
+    "sample_urls": [
+      "http://www.pnumbers.com/"
+    ]
+  },
+  "content_source_for_analysis": "tavily",
+  "table_extraction": {
+    "test": "table_extraction",
+    "timestamp": "2025-12-12T01:48:48.420953",
+    "has_table_content": false,
+    "table_indicators": [
+      {
+        "indicator": "ASME reference",
+        "count": 2,
+        "sample": [
+          "asme",
+          "asme"
+        ]
+      },
+      {
+        "indicator": "SA specification",
+        "count": 1240,
+        "sample": [
+          "SA-36",
+          "SA-53",
+          "SA-53"
+        ]
+      },
+      {
+        "indicator": "SB specification",
+        "count": 685,
+        "sample": [
+          "SB-26",
+          "SB-26",
+          "SB-26"
+        ]
+      }
+    ],
+    "material_keywords_found": [],
+    "sample_rows": []
+  }
+}

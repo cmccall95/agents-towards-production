@@ -48,7 +48,7 @@ INITIAL_BACKOFF = 1.0  # Initial backoff delay in seconds
 def code_to_url(code: str) -> str:
     """
     Convert ASTM code to store.astm.org URL.
-    
+
     Examples:
     - "A0105_A0105M-23" → "https://store.astm.org/a0105_a0105m-23.html"
     - "A0001-00R18" → "https://store.astm.org/a0001-00r18.html"
@@ -131,15 +131,15 @@ def extract_content_with_retry(url: str) -> dict:
 def save_markdown(code: str, designation: str, title: str, content: str, url: str) -> Path:
     """Save content as a Markdown file."""
     md_path = MD_DIR / f"{code.lower()}.md"
-    
+
     header = f"<!-- Source: {url} -->\n\n"
     header += f"# {designation}\n\n"
     if title:
         header += f"**{title}**\n\n---\n\n"
-    
+
     with open(md_path, "w", encoding="utf-8") as f:
         f.write(header + content)
-    
+
     return md_path
 
 
@@ -176,6 +176,162 @@ def get_next_batch_to_process(total_batches: int) -> int:
         if batch_num not in completed:
             return batch_num
     return -1  # All batches completed
+
+
+def load_failed_standards() -> list:
+    """
+    Load the list of failed standards from the consolidated error file.
+    Returns a list of standard dictionaries with code, designation, url.
+    """
+    error_file = JSON_DIR / "all_errors_consolidated.json"
+    if not error_file.exists():
+        return []
+
+    with open(error_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    # Convert errors to standard format
+    failed = []
+    for error in data.get("errors", []):
+        failed.append({
+            "code": error.get("code"),
+            "designation": error.get("designation"),
+            "url": error.get("url"),
+            "original_error": error.get("error"),
+            "category": error.get("category")
+        })
+    return failed
+
+
+def extract_batch_with_retry(urls: list) -> dict:
+    """
+    Extract content from multiple URLs in a single Tavily API call.
+    Implements exponential backoff retry logic for 429 rate limit errors.
+    Returns a dict mapping URL to result.
+    """
+    last_error = None
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = tavily_client.extract(urls=urls)
+
+            if response and "results" in response:
+                # Map results by URL
+                results_map = {}
+                for result in response["results"]:
+                    url = result.get("url", "")
+                    raw_content = result.get("raw_content", "")
+                    title = result.get("title", "")
+
+                    if len(raw_content.strip()) < 100:
+                        results_map[url] = {"success": False, "error": "Empty or insufficient content"}
+                    else:
+                        results_map[url] = {
+                            "success": True,
+                            "url": url,
+                            "title": title,
+                            "raw_content": raw_content
+                        }
+
+                # Mark URLs that didn't return results
+                for url in urls:
+                    if url not in results_map:
+                        results_map[url] = {"success": False, "error": "No results from Tavily"}
+
+                return {"success": True, "results": results_map, "retries": attempt}
+            else:
+                return {"success": False, "error": "No results from Tavily", "retries": attempt, "results": {}}
+
+        except Exception as e:
+            last_error = e
+
+            if is_rate_limit_error(e):
+                if attempt < MAX_RETRIES - 1:
+                    backoff_delay = INITIAL_BACKOFF * (2 ** attempt)
+                    print(f"    ⏳ Rate limited (429). Retry {attempt + 1}/{MAX_RETRIES} in {backoff_delay:.1f}s...")
+                    time.sleep(backoff_delay)
+                    continue
+            else:
+                # Non-rate-limit error - mark all URLs as failed
+                results_map = {url: {"success": False, "error": str(e)} for url in urls}
+                return {"success": False, "error": str(e), "retries": attempt, "results": results_map}
+
+    # All retries exhausted
+    results_map = {url: {"success": False, "error": f"Rate limit exceeded: {str(last_error)}"} for url in urls}
+    return {"success": False, "error": str(last_error), "retries": MAX_RETRIES, "results": results_map}
+
+
+BATCH_EXTRACT_SIZE = 20  # Tavily supports up to 20 URLs per extract call
+
+
+def process_failed_standards(failed_standards: list) -> tuple:
+    """Process a list of previously failed standards using batch extraction."""
+    total = len(failed_standards)
+    num_batches = (total + BATCH_EXTRACT_SIZE - 1) // BATCH_EXTRACT_SIZE
+
+    print(f"\n{'=' * 60}")
+    print(f"🔄 RETRY: Processing {total} previously failed standards")
+    print(f"📦 Using batch extraction: {num_batches} batches of up to {BATCH_EXTRACT_SIZE} URLs each")
+    print(f"{'=' * 60}")
+
+    results = []
+    errors = []
+
+    for batch_idx in range(num_batches):
+        start = batch_idx * BATCH_EXTRACT_SIZE
+        end = min(start + BATCH_EXTRACT_SIZE, total)
+        batch = failed_standards[start:end]
+        urls = [s["url"] for s in batch]
+
+        print(f"\n[Batch {batch_idx + 1}/{num_batches}] Processing {len(urls)} URLs...")
+
+        # Extract batch with retry logic
+        batch_result = extract_batch_with_retry(urls)
+        time.sleep(BASE_DELAY)  # Base rate limiting between batch requests
+
+        results_map = batch_result.get("results", {})
+
+        for standard in batch:
+            code = standard["code"]
+            designation = standard["designation"]
+            url = standard["url"]
+
+            extract_result = results_map.get(url, {"success": False, "error": "URL not in response"})
+
+            if extract_result.get("success"):
+                # Save markdown
+                md_path = save_markdown(
+                    code,
+                    parse_designation(code),
+                    extract_result.get("title", ""),
+                    extract_result.get("raw_content", ""),
+                    url
+                )
+
+                results.append({
+                    "code": code,
+                    "designation": designation,
+                    "url": url,
+                    "title": extract_result.get("title", ""),
+                    "content_length": len(extract_result.get("raw_content", "")),
+                    "md_file": str(md_path),
+                    "success": True
+                })
+                print(f"    ✓ {code}")
+            else:
+                error_msg = extract_result.get("error", "Unknown error")
+                errors.append({
+                    "code": code,
+                    "designation": designation,
+                    "url": url,
+                    "error": error_msg,
+                    "success": False
+                })
+                print(f"    ✗ {code}: {error_msg[:40]}...")
+
+        print(f"    Batch complete: {sum(1 for s in batch if results_map.get(s['url'], {}).get('success'))} success, {sum(1 for s in batch if not results_map.get(s['url'], {}).get('success'))} failed")
+
+    return results, errors
 
 
 def process_batch(standards: list, start_idx: int, end_idx: int, batch_num: int) -> tuple:
@@ -279,6 +435,7 @@ def main():
     parser.add_argument("--resume", action="store_true", help="Resume from next incomplete batch")
     parser.add_argument("--resume-through", type=int, metavar="N", help="Resume and process through batch N")
     parser.add_argument("--status", action="store_true", help="Show progress status and exit")
+    parser.add_argument("--retry-failed", action="store_true", help="Retry only previously failed standards")
     args = parser.parse_args()
 
     print("=" * 60)
@@ -308,6 +465,55 @@ def main():
 
     # Status mode - just show progress and exit
     if args.status:
+        return
+
+    # Retry failed mode - special handling
+    if args.retry_failed:
+        failed_standards = load_failed_standards()
+        if not failed_standards:
+            print("\n✅ No failed standards to retry!")
+            print("   (Make sure all_errors_consolidated.json exists)")
+            return
+
+        print(f"\n📋 Found {len(failed_standards)} failed standards to retry")
+
+        # Process failed standards
+        results, errors = process_failed_standards(failed_standards)
+
+        # Save retry results
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+        # Save successful retries
+        retry_results_path = JSON_DIR / f"retry_results_{timestamp}.json"
+        with open(retry_results_path, "w", encoding="utf-8") as f:
+            json.dump({
+                "timestamp": timestamp,
+                "total_retried": len(failed_standards),
+                "successful": len(results),
+                "failed": len(errors),
+                "results": results
+            }, f, indent=2)
+
+        # Save remaining errors
+        if errors:
+            retry_errors_path = JSON_DIR / f"retry_errors_{timestamp}.json"
+            with open(retry_errors_path, "w", encoding="utf-8") as f:
+                json.dump({
+                    "timestamp": timestamp,
+                    "remaining_errors": len(errors),
+                    "errors": errors
+                }, f, indent=2)
+            print(f"\n❌ Remaining errors: {retry_errors_path.name}")
+
+        # Summary
+        print(f"\n{'=' * 60}")
+        print("📊 RETRY SUMMARY")
+        print(f"{'=' * 60}")
+        print(f"  📋 Total retried: {len(failed_standards)}")
+        print(f"  ✓ Successful: {len(results)} ({100*len(results)/len(failed_standards):.1f}%)")
+        print(f"  ✗ Still failed: {len(errors)} ({100*len(errors)/len(failed_standards):.1f}%)")
+        print(f"  💾 Results: {retry_results_path.name}")
+
         return
 
     # Determine what to process

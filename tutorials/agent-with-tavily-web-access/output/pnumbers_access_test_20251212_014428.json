@@ -1,0 +1,35 @@
+{
+  "test_run": "20251212_014428",
+  "target_url": "https://www.pnumbers.com/",
+  "target_domain": "pnumbers.com",
+  "site_access": {
+    "test": "site_access",
+    "url": "https://www.pnumbers.com/",
+    "timestamp": "2025-12-12T01:44:28.348779",
+    "success": false,
+    "error": "No results returned from Tavily",
+    "content_length": 0,
+    "title": null,
+    "raw_content_preview": null,
+    "retries": 0
+  },
+  "search_discovery": {
+    "test": "search_discovery",
+    "domain": "pnumbers.com",
+    "timestamp": "2025-12-12T01:44:31.734710",
+    "success": true,
+    "error": null,
+    "pages_found": 1,
+    "sample_urls": [
+      "http://www.pnumbers.com/"
+    ]
+  },
+  "table_extraction": {
+    "test": "table_extraction",
+    "timestamp": "2025-12-12T01:44:35.024545",
+    "has_table_content": false,
+    "table_indicators": [],
+    "material_keywords_found": [],
+    "sample_rows": []
+  }
+}
