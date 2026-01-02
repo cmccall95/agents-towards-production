@@ -1,0 +1,15 @@
+# ASTM Scribd Extraction - Dependencies
+
+# HTTP client
+requests>=2.31.0
+
+# HTML parsing
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# Testing
+pytest>=7.4.0
+
+# Optional: async support for future optimization
+# aiohttp>=3.9.0
+# asyncio>=3.4.0

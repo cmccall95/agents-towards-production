@@ -2,105 +2,290 @@
 
 ## Overview
 
-Extract ASTM standard documents from Scribd.com API and save to PostgreSQL database as markdown for future DSPy/Cleanlab processing.
+Extract ASTM standard documents from Scribd.com using Crawlbase API (10,000 free requests) and save as markdown for future DSPy/Cleanlab processing.
 
 ---
 
-## Phase 1: Setup & Validation
+## Quick Start
 
-- [ ] **1.1** Create directory structure (`/output`, `/logs`, `/tests`)
-- [ ] **1.2** Create `config.py` with API keys, database connection, paths
-- [ ] **1.3** Create `load_astm_list.py` - utility to load ASTM standards from master JSON
-- [ ] **1.4** Validate ASTM list loading (11,109 standards available)
-- [ ] **1.5** Test Scribd API connection with single standard
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
 
----
+# 2. Set API token (get from https://crawlbase.com)
+export CRAWLBASE_JS_TOKEN="your_js_token_here"
 
-## Phase 2: Small Batch Test (5-10 Standards)
+# 3. Verify configuration
+python config.py
 
-- [ ] **2.1** Create `scribd_extractor.py` - core extraction logic
-- [ ] **2.2** Test extraction on 5 A-series standards (A106, A312, A182, A333, A234)
-- [ ] **2.3** Validate markdown output format and content quality
-- [ ] **2.4** Create `db_handler.py` - PostgreSQL save/update logic
-- [ ] **2.5** Test saving markdown to PG database
-- [ ] **2.6** Verify retrieval from database
+# 4. Run tests
+pytest tests/ -v
 
----
-
-## Phase 3: Multiprocessing Implementation
-
-- [ ] **3.1** Add `ProcessPoolExecutor` to extraction script
-- [ ] **3.2** Implement rate limiting per API requirements
-- [ ] **3.3** Add progress tracking and logging
-- [ ] **3.4** Test with 50 standards to validate parallelism
-- [ ] **3.5** Add checkpoint/resume capability
+# 5. Run Phase 1 (single document test)
+python pipeline.py --phase 1
+```
 
 ---
 
-## Phase 4: Batch Extraction
-
-- [ ] **4.1** Create `batch_runner.py` with CLI for batch ranges
-- [ ] **4.2** Run Batch 1: Standards 1-1000
-- [ ] **4.3** Run Batch 2: Standards 1001-2000
-- [ ] **4.4** Continue batches until complete (11,109 total)
-- [ ] **4.5** Generate extraction summary report
-- [ ] **4.6** Handle and log failed extractions for retry
-
----
-
-## Future: DSPy + Cleanlab Processing
-
-> **Note:** Separate implementation after markdown extraction complete
-
-- [ ] Create DSPy extraction pipeline for structured data
-- [ ] Implement Cleanlab validation for data quality
-- [ ] Extract: grades, chemical composition, mechanical properties, applications
-
----
-
-## Files Structure
+## Architecture
 
 ```
 ASTM_SCRIBD/
-├── DEVELOPMENT_GUIDE.md      # This file
-├── LLM_CONTEXT.md            # How to load ASTM standards
-├── config.py                 # Configuration
-├── load_astm_list.py         # Load ASTM master list
-├── scribd_extractor.py       # Core Scribd API extraction
-├── db_handler.py             # PostgreSQL operations
-├── batch_runner.py           # Batch processing CLI
-├── output/                   # Local markdown backup
-├── logs/                     # Extraction logs
-└── tests/                    # Test scripts
+├── config.py              # Configuration & environment
+├── load_astm_list.py      # Load 11,109 ASTM standards from master JSON
+├── crawlbase_client.py    # Crawlbase API client with rate limiting
+├── scribd_search.py       # Search Scribd & find official documents
+├── markdown_converter.py  # Convert HTML to clean markdown
+├── pipeline.py            # Main extraction pipeline (phases 1-3)
+├── requirements.txt       # Python dependencies
+├── DEVELOPMENT_GUIDE.md   # This file
+├── LLM_CONTEXT.md         # Quick reference for loading ASTM standards
+│
+├── output/
+│   ├── markdown/          # Extracted markdown files
+│   ├── logs/              # Batch processing logs (JSON)
+│   └── checkpoints/       # Resume checkpoints
+│
+└── tests/
+    ├── __init__.py
+    └── test_pipeline.py   # Unit & integration tests
 ```
 
 ---
 
-## ASTM Standards Source
+## Extraction Pipeline
 
-| Item | Value |
-|------|-------|
-| Master JSON | `tutorials/agent-with-tavily-web-access/output/astm_lists/astm_standards_list.json` |
-| Total Standards | 11,109 |
-| Series | A (208), B (590), C (1097), D (4768), E (2120), F (2137), G (188) |
+### Phase 1: Single Standard Test
+**Purpose:** Validate API connection and basic extraction
+
+```bash
+python pipeline.py --phase 1
+```
+
+Validates:
+- [x] Crawlbase API connection works
+- [x] Scribd search returns results
+- [x] Document can be fetched with JS rendering
+- [x] HTML converts to valid markdown
+
+### Phase 2: Small Batch Test
+**Purpose:** Test multiple standards and edge cases
+
+```bash
+python pipeline.py --phase 2 --count 10
+```
+
+Tests:
+- [x] Batch processing logic
+- [x] Different standard types (A-series, B-series, etc.)
+- [x] Error handling and logging
+- [x] Rate limiting compliance
+
+### Phase 3: Full Batch Processing
+**Purpose:** Production extraction of all 11,109 standards
+
+```bash
+# Process batch 0 (standards 0-199)
+python pipeline.py --phase 3 --batch 0 --batch-size 200
+
+# Process batch 1
+python pipeline.py --phase 3 --batch 1
+
+# Dry run (no API calls)
+python pipeline.py --phase 3 --batch 0 --dry-run
+```
+
+Features:
+- [x] Checkpoint every 25 standards (resumable)
+- [x] Detailed logging with JSON output
+- [x] API usage stats tracking
+- [x] Error consolidation
 
 ---
 
-## API Notes
+## Crawlbase API
 
-Keep extraction scripts modular - we may test multiple APIs:
-- Scribd API (primary)
-- Alternative sources TBD
+### Setup
 
-Each API implementation should be in its own file with consistent interface.
+1. Create account at https://crawlbase.com
+2. Get JavaScript token (required for Scribd's dynamic content)
+3. Set environment variable:
+   ```bash
+   export CRAWLBASE_JS_TOKEN="your_token"
+   ```
+
+### Rate Limits
+
+| Limit | Value |
+|-------|-------|
+| Max requests/second | 20 |
+| Recommended delay | 200ms (5 req/sec) |
+| Timeout | 90 seconds |
+| Free tier | 10,000 requests |
+
+### Billing
+
+- Only **successful** requests are billed
+- Check `pc_status` and `original_status` in response headers
+- Track usage in API dashboard
+
+---
+
+## ASTM Standards Format
+
+### Identifier Pattern
+```
+{SERIES}{ZERO_PADDED_NUMBER}-{YEAR}{REVISION}
+
+Examples:
+  A0106-22     -> A-series #106, year 2022
+  A0001-00R18  -> A-series #1, year 2000, revision 18
+  D1234-20E01  -> D-series #1234, year 2020, edition 01
+```
+
+### Series Breakdown
+
+| Series | Count | Domain |
+|--------|-------|--------|
+| A | 208 | Ferrous Metals (Steel, Iron) |
+| B | 590 | Nonferrous Metals |
+| C | 1,097 | Cementitious, Ceramic, Masonry |
+| D | 4,768 | Miscellaneous Materials |
+| E | 2,120 | Testing Methods |
+| F | 2,137 | Specific Applications |
+| G | 188 | Corrosion, Deterioration |
+| **Total** | **11,109** | |
+
+---
+
+## Priority Standards
+
+For initial testing (welding/piping focus):
+
+| Code | Description |
+|------|-------------|
+| A0105 | Carbon Steel Forgings |
+| A0106 | Seamless Carbon Steel Pipe |
+| A0182 | Forged Alloy/Stainless Fittings |
+| A0193 | Alloy Steel Bolting |
+| A0194 | Carbon/Alloy Steel Nuts |
+| A0234 | Wrought Carbon Steel Fittings |
+| A0312 | Austenitic Stainless Steel Pipe |
+| A0333 | Low-Temperature Pipe |
+| A0350 | Low-Temperature Forgings |
+| A0403 | Wrought Austenitic SS Fittings |
+| A0516 | Pressure Vessel Plate |
+
+---
+
+## Output Format
+
+### Markdown Structure
+
+```markdown
+<!-- ASTM Standard: ASTM A0106-22 -->
+<!-- Source: Scribd -->
+<!-- Document ID: 123456789 -->
+<!-- URL: https://www.scribd.com/document/123456789 -->
+<!-- Extracted: 2024-01-15T10:30:00 -->
+
+# ASTM A0106-22
+
+**Standard Specification for Seamless Carbon Steel Pipe**
+
+---
+
+[Document content...]
+```
+
+### Log Files
+
+```json
+{
+  "batch_id": "phase3_batch_0000",
+  "phase": 3,
+  "started_at": "2024-01-15T10:00:00",
+  "completed_at": "2024-01-15T11:30:00",
+  "total": 200,
+  "successful": 185,
+  "failed": 15,
+  "results": [...],
+  "api_stats": {
+    "total_requests": 400,
+    "successful_requests": 370,
+    "success_rate": 0.925
+  }
+}
+```
+
+---
+
+## Testing
+
+```bash
+# Run all tests
+pytest tests/ -v
+
+# Run specific test class
+pytest tests/test_pipeline.py::TestLoadASTMList -v
+
+# Run with coverage
+pytest tests/ --cov=. --cov-report=html
+```
+
+Key test areas:
+- Configuration validation
+- ASTM list loading and filtering
+- Standard code parsing (year, revision)
+- Relevance scoring for document matching
+- HTML to markdown conversion
+- Table and heading handling
+
+---
+
+## Error Handling
+
+### Common Errors
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| No API token | CRAWLBASE_JS_TOKEN not set | Export environment variable |
+| Rate limited (429) | Too many requests | Automatic retry with backoff |
+| Timeout | Scribd slow/blocked | Increase timeout, retry |
+| No results | Document not on Scribd | Log and skip |
+| Parse error | Unexpected HTML format | Check selectors, update converter |
+
+### Recovery
+
+1. Check logs in `output/logs/`
+2. Find checkpoint in `output/checkpoints/`
+3. Identify failed batch range
+4. Re-run specific batch: `python pipeline.py --phase 3 --batch N`
+
+---
+
+## Future Enhancements
+
+- [ ] PostgreSQL storage for structured data
+- [ ] DSPy extraction pipeline
+- [ ] Cleanlab data quality validation
+- [ ] Parallel batch processing
+- [ ] Alternative API fallbacks
 
 ---
 
 ## Success Criteria
 
-1. ✅ All 11,109 ASTM standards attempted
-2. ✅ Markdown saved to PostgreSQL with metadata
-3. ✅ Failed extractions logged with error details
-4. ✅ Extraction rate > 90% success
-5. ✅ Ready for DSPy/Cleanlab phase
+1. All 11,109 ASTM standards attempted
+2. Markdown saved with proper formatting
+3. Failed extractions logged with details
+4. Extraction success rate > 90%
+5. API usage stays within 10,000 free requests (may need batching strategy)
 
+---
+
+## Resource Links
+
+- Crawlbase Docs: https://crawlbase.com/docs/crawling-api/
+- ASTM Master List: `tutorials/agent-with-tavily-web-access/output/astm_lists/astm_standards_list.json`
+- Scribd Search: https://www.scribd.com/search?query=ASTM
